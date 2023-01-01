@@ -1,0 +1,203 @@
+:root {
+  --Pale-Blue: hsl(243, 100%, 93%);
+  --Grayish-Blue: hsl(229, 7%, 55%);
+  --Dark-Blue: hsl(228, 56%, 26%);
+  --Very-Dark-Blue: hsl(229, 57%, 11%);
+  --Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 12px;
+  position: relative;
+  background: url(images/bg-desktop.png) no-repeat bottom / contain,
+    var(--Very-Dark-Blue);
+}
+.container {
+  min-height: 97vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 44, 61);
+}
+.child_container {
+  min-height: 10rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 30px;
+}
+.social_container {
+  width: 16rem;
+  min-height: 10rem;
+  padding: 25px;
+  border-radius: 8px;
+  border-top-right-radius: 60px;
+  background-color: var(--Dark-Blue);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.logo_main {
+  width: 8rem;
+}
+.file_icon {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.icon_div {
+  width: 3.5em;
+  height: 3.5em;
+
+  background-color: var(--Very-Dark-Blue);
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+}
+
+.progress_section {
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--Dark-Blue);
+  border-radius: 10px;
+  padding: 25px;
+}
+.data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+p {
+  font-weight: 500;
+  color: var(--Pale-Blue);
+}
+.progress {
+  width: 100%;
+  background-color: var(--Very-Dark-Blue);
+  border-radius: 30px;
+  min-height: 14px;
+  position: relative;
+}
+
+.prog_inner {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 80%;
+  min-height: 10px;
+  background: linear-gradient(to left, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-end;
+}
+.ball {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: aliceblue;
+}
+
+/* pop_up card section */
+
+.pop_card {
+  position: absolute;
+
+  transform: translate(170%, -100%);
+  padding: 6px 12px;
+  text-align: center;
+  background-color: var(--Pale-Blue);
+  border-radius: 8px 8px 0 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 8px;
+}
+.pop_card::after {
+  position: absolute;
+  top: 100%;
+  left: 84%;
+  border: solid transparent;
+  content: "";
+
+  pointer-events: none;
+  border-top-color: var(--Pale-Blue);
+  border-right-color: var(--Pale-Blue);
+  border-width: 10px;
+}
+.heading {
+  display: flex;
+  flex-direction: row;
+}
+.heading > h1 {
+  font-size: 30px;
+}
+.line_height {
+  line-height: 1.6;
+}
+span {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--Pale-Blue);
+}
+.GB {
+  color: var(--Grayish-Blue);
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background: url(images/bg-desktop.png) no-repeat bottom / cover,
+      var(--Very-Dark-Blue);
+  }
+  .child_container {
+    min-height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+  }
+  .social_container {
+    width: 25rem;
+    min-height: 12rem;
+  }
+  .progress_section {
+    min-height: 10rem;
+  }
+  .pop_card {
+    width: 10rem;
+    min-height: 4rem;
+    position: absolute;
+
+    left: 50%;
+    transform: translate(-50%, 160%);
+    border-radius: 8px;
+  }
+  .pop_card::after {
+    border: none;
+  }
+}
+
+@media screen and (max-width: 556px) {
+  .child_container {
+    width: 100%;
+    padding: 0 40px;
+  }
+  .social_container {
+    width: 100%;
+  }
+  .progress_section {
+    width: 100%;
+  }
+}
